@@ -13,11 +13,11 @@ jobs:
         run: mkdir -p testResults
      
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:25.7.3  --outputFolder /sitespeed.io/sitespeed-result/ https://mitesh411.github.io/MyResume/ -n 1
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:25.7.3  --outputFolder sitespeed.io https://mitesh411.github.io/MyResume/ -n 1
       
     # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
         uses: actions/upload-artifact@v3
         with:
           name: RunReports
-          path: sitespeed.io/sitespeed-result
+          path: sitespeed.io
