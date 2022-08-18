@@ -20,4 +20,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: RunReports
-          path: /sitespeed.io/sitespeed-result/
+          path: sitespeed.io/sitespeed-result
