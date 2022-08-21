@@ -21,3 +21,18 @@ jobs:
         with:
           name: RunReports
           path: sitespeed.io
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: mkdir -p ${{ github.workspace }}/tmp/artifacts
+    - name: Lighthouse Check
+      uses: foo-software/lighthouse-check-action@v9.0.0
+      with:
+        outputDirectory: ${{ github.workspace }}/tmp/artifacts
+        urls: 'https://mitesh411.github.io/MyResume,https://www.google.com'
+    - name: Upload artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: Lighthouse reports
+        path: ${{ github.workspace }}/tmp/artifacts
