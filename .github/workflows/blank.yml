@@ -6,7 +6,7 @@ jobs:
     name: running sitespeed.io
     steps:
       - name: code checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
      
      # Make directory to upload the test results
       - name: Make Directory for results
