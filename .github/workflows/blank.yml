@@ -6,18 +6,18 @@ jobs:
     name: running sitespeed.io
     steps:
       - name: code checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.0
      
      # Make directory to upload the test results
       - name: Make Directory for results
         run: mkdir -p testResults
      
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:33.4.0  --outputFolder sitespeed.io http://getmyservice.in/ -n 1
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:35.0.0-slim  --outputFolder sitespeed.io https://mitesh411.github.io/MyResume/ -n 1
       
     # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: RunReports
           path: sitespeed.io
