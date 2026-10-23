@@ -4,6 +4,8 @@ jobs:
   run-sitespeed:
     runs-on: ubuntu-latest
     name: running sitespeed.io
+    permissions:
+      contents: read
     steps:
       - name: code checkout
         uses: actions/checkout@v7.0.1
@@ -21,4 +23,3 @@ jobs:
         with:
           name: RunReports
           path: sitespeed.io
-  
