@@ -13,7 +13,7 @@ jobs:
         run: mkdir -p testResults
      
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:42.1.0.0-slim  --outputFolder sitespeed.io https://mitesh411.github.io/MyResume/ -n 1
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:42.10.0  --outputFolder sitespeed.io https://mitesh411.github.io/MyResume/ -n 1
       
     # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
